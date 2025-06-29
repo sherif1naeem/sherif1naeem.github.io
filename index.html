@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>آلة حاسبة - شريف نعيم</title>
+</head>
+<body style="text-align:center; font-family:Arial">
+  <h2>🔢 آلة حاسبة باسم شريف</h2>
+  <input id="num1" type="number" placeholder="الرقم الأول">
+  <select id="op">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input id="num2" type="number" placeholder="الرقم الثاني">
+  <br><br>
+  <button onclick="calc()">احسب</button>
+  <h3 id="result">النتيجة: </h3>
+  <script>
+    function calc() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      let op = document.getElementById("op").value;
+      let r;
+      if(op === "+") r = n1 + n2;
+      else if(op === "-") r = n1 - n2;
+      else if(op === "*") r = n1 * n2;
+      else if(op === "/") r = n2 !== 0 ? n1 / n2 : "لا يمكن القسمة على صفر";
+      document.getElementById("result").innerText = "النتيجة: " + r;
+    }
+  </script>
+</body>
+</html>

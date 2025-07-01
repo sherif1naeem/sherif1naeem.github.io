@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,10 +12,14 @@
       color: #1a1a1a;
     }
     header {
-      background-color: #003366; /* أزرق غامق */
+      background-color: #003366;
       color: white;
       padding: 30px 20px;
       text-align: center;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 15px;
     }
     header h1 {
       margin: 0;
@@ -25,32 +28,28 @@
     header p {
       margin: 8px 0 0;
       font-size: 18px;
-      color: #ff9900; /* برتقالي */
+      color: #ff9900;
       font-weight: bold;
     }
-
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 30px auto;
       background: white;
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
     h2 {
       color: #003366;
       border-right: 6px solid #ff9900;
       padding-right: 10px;
       margin-top: 0;
     }
-
     ul {
       list-style-type: square;
       padding-right: 20px;
       line-height: 1.8;
     }
-
     .contact {
       background-color: #f1f1f1;
       padding: 15px;
@@ -58,7 +57,29 @@
       font-size: 16px;
       margin-top: 20px;
     }
-
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+    .gallery img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+    }
     footer {
       text-align: center;
       font-size: 14px;
@@ -67,45 +88,56 @@
       color: white;
       margin-top: 40px;
     }
-
     @media(max-width: 600px) {
       header h1 { font-size: 24px; }
       section { padding: 20px; }
+      .gallery img { width: 100%; }
     }
   </style>
 </head>
-<body>
-
-  <header>
+<body>  <header>
+    <img src="https://i.postimg.cc/JDDmxXkX/logo.jpg" alt="لوجو المهندس">
     <h1>المهندس للتشطيبات</h1>
     <p>تشطيبات سكنية وتجارية - مدينة السادات</p>
-  </header>
-
-  <section>
+  </header>  <section>
     <h2>من نحن</h2>
     <p>
       نحن شركة متخصصة في تنفيذ جميع أنواع التشطيبات السكنية والتجارية، نتميز بالدقة والسرعة والجودة العالية، مع أسعار مناسبة وخدمة عملاء مميزة.
-    </p>
+    </p><h2>خدماتنا</h2>
+<ul>
+  <li>تشطيبات كاملة على المفتاح</li>
+  <li>دهانات داخلية وخارجية</li>
+  <li>أعمال كهرباء وسباكة</li>
+  <li>أرضيات سيراميك وبورسلين</li>
+  <li>أعمال جبس بورد وديكورات</li>
+</ul>
 
-    <h2>خدماتنا</h2>
-    <ul>
-      <li>تشطيبات كاملة على المفتاح</li>
-      <li>دهانات داخلية وخارجية</li>
-      <li>أعمال كهرباء وسباكة</li>
-      <li>أرضيات سيراميك وبورسلين</li>
-      <li>أعمال جبس بورد وديكورات</li>
-    </ul>
+<h2>معرض أعمالنا</h2>
+<div class="gallery">
+  <img src="https://i.postimg.cc/877SNWZ0/IMG-20250620-WA0296.jpg" alt="صورة عمل 1">
+  <img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg" alt="صورة عمل 2">
+  <img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg" alt="صورة عمل 3">
+  <img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg" alt="صورة عمل 4">
+  <img src="https://i.postimg.cc/XXW4drvr/IMG-20250620-WA0322.jpg" alt="صورة عمل 5">
+  <img src="https://i.postimg.cc/Cn7vfPxs/IMG-20250620-WA0332.jpg" alt="صورة عمل 6">
+</div>
 
-    <h2>تواصل معنا</h2>
-    <div class="contact">
-      <p>📞 01069454595</p>
-      <p>📍 مدينة السادات</p>
-    </div>
-  </section>
+<h2>ليه تختارنا؟</h2>
+<p>
+  ✅ لأننا بنشتغل بإيدينا وبنتابع كل شغل خطوة بخطوة، يعني مفيش مقاولين بيمرروا الشغل لناس تانية.<br>
+  ✅ لأن أسعارنا مناسبة، وشغلنا على المفتاح من غير صداع ولا مفاجآت.<br>
+  ✅ لأن العميل بالنسبة لينا مش صفقة، ده علاقة دايمة وشغل بيتشاف على الأرض.<br>
+  ✅ والأهم: ثقة كل اللي اشتغلنا معاهم هي اللي بتكبرنا كل يوم.
+</p>
 
-  <footer>
+<h2>تواصل معنا</h2>
+<div class="contact">
+  <p>📞 01061751523</p>
+  <p>📍 مدينة السادات</p>
+  <a class="whatsapp" href="https://wa.me/201061751523" target="_blank">راسلنا على واتساب</a>
+</div>
+
+  </section>  <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
-  </footer>
-
-</body>
+  </footer></body>
 </html>

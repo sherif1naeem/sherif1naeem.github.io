@@ -120,12 +120,25 @@
     }
     #robot {
       position: fixed;
-      bottom: 10px;
+      top: 40%;
       left: 10px;
       width: 90px;
       height: 90px;
       z-index: 999;
       cursor: pointer;
+    }
+    #robot-message {
+      position: fixed;
+      top: 30%;
+      left: 120px;
+      background: white;
+      color: #003366;
+      padding: 10px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 998;
+      display: none;
+      font-weight: bold;
     }
     footer {
       text-align: center;
@@ -174,7 +187,8 @@
   <a class="whatsapp" href="https://wa.me/201061751523" target="_blank">راسلنا على واتساب</a>
 </div>
 
-  </section>  <div id="robot"></div>  <footer>
+  </section>  <div id="robot"></div>
+  <div id="robot-message">أنا روبوت المهندس! اضغط عليّ لو عايز تعرف أكتر 😊</div>  <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
   </footer>  <script>
     let slideIndex = 1;
@@ -196,7 +210,7 @@
     }
     setInterval(() => plusSlides(1), 4000);
 
-    // روبوت متحرك (ألوان قريبة من الأزرق والبرتقالي)
+    // روبوت متحرك + رسالة جانبية
     var animation = bodymovin.loadAnimation({
       container: document.getElementById('robot'),
       renderer: 'svg',
@@ -205,8 +219,17 @@
       path: 'https://assets2.lottiefiles.com/packages/lf20_vybwn7df.json'
     });
 
-    document.getElementById('robot').addEventListener('click', () => {
+    const robot = document.getElementById('robot');
+    const message = document.getElementById('robot-message');
+
+    robot.addEventListener('mouseenter', () => {
+      message.style.display = 'block';
+    });
+    robot.addEventListener('mouseleave', () => {
+      message.style.display = 'none';
+    });
+    robot.addEventListener('click', () => {
       alert("أنا روبوت المهندس! اضغط على أي عنصر وأنا هشرحلك 😄");
     });
   </script></body>
-</html>
+  </html>

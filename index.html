@@ -1,34 +1,78 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>آلة حاسبة - شريف نعيم</title>
-</head>
-<body style="text-align:center; font-family:Arial">
-  <h2>🔢 آلة حاسبة باسم شريف</h2>
-  <input id="num1" type="number" placeholder="الرقم الأول">
-  <select id="op">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-  </select>
-  <input id="num2" type="number" placeholder="الرقم الثاني">
-  <br><br>
-  <button onclick="calc()">احسب</button>
-  <h3 id="result">النتيجة: </h3>
-  <script>
-    function calc() {
-      let n1 = parseFloat(document.getElementById("num1").value);
-      let n2 = parseFloat(document.getElementById("num2").value);
-      let op = document.getElementById("op").value;
-      let r;
-      if(op === "+") r = n1 + n2;
-      else if(op === "-") r = n1 - n2;
-      else if(op === "*") r = n1 * n2;
-      else if(op === "/") r = n2 !== 0 ? n1 / n2 : "لا يمكن القسمة على صفر";
-      document.getElementById("result").innerText = "النتيجة: " + r;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المهندس للتشطيبات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
     }
-  </script>
+    header {
+      background-color: #ff6600;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+    }
+    .contact {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>المهندس للتشطيبات</h1>
+    <p>تشطيبات سكنية وتجارية - مدينة السادات</p>
+  </header>
+
+  <section>
+    <h2>من نحن</h2>
+    <p>
+      نحن فريق متخصص في تنفيذ جميع أنواع التشطيبات السكنية والتجارية بجودة عالية وأسعار مناسبة.
+    </p>
+    <h2>خدماتنا</h2>
+    <ul>
+      <li>تشطيبات كاملة على المفتاح</li>
+      <li>ديكورات داخلية</li>
+      <li>دهانات وسباكة وكهرباء</li>
+      <li>أعمال جبس وبورسلين وسيراميك</li>
+    </ul>
+
+    <h2>تواصل معنا</h2>
+    <div class="contact">
+      <p>📞 01069454595</p>
+      <p>📍 مدينة السادات</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
+  </footer>
+
 </body>
 </html>

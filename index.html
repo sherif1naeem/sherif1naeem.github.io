@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>المهندس للتشطيبات</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -117,30 +118,14 @@
       margin-top: 15px;
       display: inline-block;
     }
-    .robot {
+    #robot {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 120px;
+      bottom: 10px;
+      left: 10px;
+      width: 100px;
+      height: 100px;
       z-index: 999;
-      animation: float 3s ease-in-out infinite;
-      text-align: center;
-    }
-    .robot img {
-      width: 80px;
-    }
-    .robot p {
-      background: #fff;
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      margin-top: 5px;
-    }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+      cursor: pointer;
     }
     footer {
       text-align: center;
@@ -189,10 +174,7 @@
   <a class="whatsapp" href="https://wa.me/201061751523" target="_blank">راسلنا على واتساب</a>
 </div>
 
-  </section>  <div class="robot" id="bot">
-    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712106.png" alt="روبوت">
-    <p id="botText">أهلاً بيك في موقع المهندس! تابعني وهشرحلك كل حاجة 😉</p>
-  </div>  <footer>
+  </section>  <div id="robot"></div>  <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
   </footer>  <script>
     let slideIndex = 1;
@@ -214,19 +196,17 @@
     }
     setInterval(() => plusSlides(1), 4000);
 
-    // روبوت يتكلم حسب التمرير
-    const botText = document.getElementById('botText');
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 300 && scrollY < 800) {
-        botText.innerText = 'هنا تقدر تشوف كل خدماتنا بالتفصيل!';
-      } else if (scrollY >= 800 && scrollY < 1400) {
-        botText.innerText = 'دي شوية صور من شغلنا، قولنا رأيك!';
-      } else if (scrollY >= 1400) {
-        botText.innerText = 'لو عايز تتواصل معانا دوس على زر الواتساب 👇';
-      } else {
-        botText.innerText = 'أهلاً بيك في موقع المهندس! تابعني وهشرحلك كل حاجة 😉';
-      }
+    // لوتي روبوت
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('robot'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets9.lottiefiles.com/packages/lf20_vpnnn0zb.json'
+    });
+
+    document.getElementById('robot').addEventListener('click', () => {
+      alert("أنا الروبوت الظريف! اضغط علي أي حاجة في الموقع وأنا أشرحها 😄");
     });
   </script></body>
 </html>

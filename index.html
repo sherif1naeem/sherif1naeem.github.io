@@ -12,18 +12,27 @@
       color: #1a1a1a;
     }
     header {
-      background-color: #003366;
+      background-image: url('https://i.postimg.cc/JDDmxXkX/logo.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 30px 20px;
+      padding: 100px 20px;
       text-align: center;
+      position: relative;
     }
-    header img {
-      height: 80px;
-      margin-bottom: 15px;
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
     }
     header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 36px;
     }
     header p {
       margin: 8px 0 0;
@@ -57,17 +66,20 @@
       font-size: 16px;
       margin-top: 20px;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 25px;
-    }
-    .gallery img {
-      width: 300px;
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .slides {
+      display: none;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
     }
     .whatsapp {
       display: inline-block;
@@ -91,12 +103,10 @@
     @media(max-width: 600px) {
       header h1 { font-size: 24px; }
       section { padding: 20px; }
-      .gallery img { width: 100%; }
     }
   </style>
 </head>
 <body>  <header>
-    <img src="https://i.postimg.cc/JDDmxXkX/logo.jpg" alt="لوجو المهندس">
     <h1>المهندس للتشطيبات</h1>
     <p>تشطيبات سكنية وتجارية - مدينة السادات</p>
   </header>  <section>
@@ -113,13 +123,11 @@
 </ul>
 
 <h2>معرض أعمالنا</h2>
-<div class="gallery">
-  <img src="https://i.postimg.cc/877SNWZ0/IMG-20250620-WA0296.jpg" alt="صورة عمل 1">
-  <img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg" alt="صورة عمل 2">
-  <img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg" alt="صورة عمل 3">
-  <img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg" alt="صورة عمل 4">
-  <img src="https://i.postimg.cc/XXW4drvr/IMG-20250620-WA0322.jpg" alt="صورة عمل 5">
-  <img src="https://i.postimg.cc/Cn7vfPxs/IMG-20250620-WA0332.jpg" alt="صورة عمل 6">
+<div class="slideshow-container">
+  <div class="slides"><img src="https://i.postimg.cc/877SNWZ0/IMG-20250620-WA0296.jpg" alt="عمل 1"></div>
+  <div class="slides"><img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg" alt="عمل 2"></div>
+  <div class="slides"><img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg" alt="عمل 3"></div>
+  <div class="slides"><img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg" alt="عمل 4"></div>
 </div>
 
 <h2>ليه تختارنا؟</h2>
@@ -139,5 +147,20 @@
 
   </section>  <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
-  </footer></body>
+  </footer>  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 2500); // تغير كل 2.5 ثانية
+    }
+  </script></body>
 </html>

@@ -79,7 +79,30 @@
     }
     .slides img {
       width: 100%;
-      height: auto;
+      height: 350px;
+      object-fit: cover;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: #ff9900;
     }
     .whatsapp {
       display: inline-block;
@@ -91,6 +114,30 @@
       font-weight: bold;
       margin-top: 15px;
       display: inline-block;
+    }
+    .bot-section {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: #eaf6ff;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .bot-section img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    .bot-section p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .bot-section a {
+      display: inline-block;
+      background-color: #ff9900;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 10px;
     }
     footer {
       text-align: center;
@@ -128,6 +175,8 @@
   <div class="slides"><img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg" alt="عمل 2"></div>
   <div class="slides"><img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg" alt="عمل 3"></div>
   <div class="slides"><img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg" alt="عمل 4"></div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 <h2>ليه تختارنا؟</h2>
@@ -145,22 +194,33 @@
   <a class="whatsapp" href="https://wa.me/201061751523" target="_blank">راسلنا على واتساب</a>
 </div>
 
+<div class="bot-section">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712106.png" alt="روبوت توضيحي">
+  <p>مرحبًا بك! أنا مساعد المهندس، هنا أشرح لك كل حاجة عن خدماتنا وطريقة التعامل معانا 👷‍♂️🤖</p>
+  <a href="https://wa.me/201061751523">اضغط هنا للتواصل معنا الآن</a>
+</div>
+
   </section>  <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
   </footer>  <script>
-    let slideIndex = 0;
-    showSlides();
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-    function showSlides() {
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
       let i;
       let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
       }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
       slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 2500); // تغير كل 2.5 ثانية
     }
+
+    setInterval(() => plusSlides(1), 3000);
   </script></body>
 </html>

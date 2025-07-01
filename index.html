@@ -12,7 +12,6 @@
       font-family: 'Cairo', sans-serif;
       background-color: #f8f9fa;
       color: #1a1a1a;
-      position: relative;
       overflow-x: hidden;
     }
     header {
@@ -51,7 +50,6 @@
       border-radius: 16px;
       padding: 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: relative;
     }
     h2 {
       color: #003366;
@@ -73,7 +71,7 @@
     }
     .slideshow-container {
       position: relative;
-      max-width: 500px;
+      max-width: 700px;
       margin: auto;
       border-radius: 12px;
       overflow: hidden;
@@ -84,8 +82,9 @@
     }
     .slides img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      height: 350px;
+      object-fit: contain;
+      background: #eee;
     }
     .prev, .next {
       cursor: pointer;
@@ -94,10 +93,11 @@
       padding: 10px;
       color: white;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 22px;
       background-color: rgba(0,0,0,0.5);
       border-radius: 50%;
       z-index: 2;
+      transform: translateY(-50%);
     }
     .prev {
       right: 10px;
@@ -176,8 +176,8 @@
       <div class="slides"><img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg" alt="عمل 2"></div>
       <div class="slides"><img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg" alt="عمل 3"></div>
       <div class="slides"><img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg" alt="عمل 4"></div>
-      <span class="prev" onclick="plusSlides(-1)">&#10095;</span>
-      <span class="next" onclick="plusSlides(1)">&#10094;</span>
+      <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1)">&#10095;</span>
     </div>
 
     <h2>ليه تختارنا؟</h2>
@@ -210,21 +210,19 @@
     }
 
     function showSlides(n) {
-      let i;
       let slides = document.getElementsByClassName("slides");
-      if (n > slides.length) {slideIndex = 1}    
+      if (n > slides.length) {slideIndex = 1}
       if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
-      slides[slideIndex-1].style.display = "block";  
+      slides[slideIndex-1].style.display = "block";
     }
-    setInterval(() => plusSlides(1), 4000);
 
-    // روبوت التفاعل
+    setInterval(() => plusSlides(1), 5000);
+
     const robot = document.getElementById('robot');
     const message = document.getElementById('robot-message');
-
     const robotSpeeches = [
       "أهلاً بيك في المهندس للتشطيبات! 👷‍♂️",
       "إحنا هنا علشان نخلي بيتك أو محلك بشكل يليق بيك!",
@@ -232,7 +230,6 @@
       "لو محتاج تصميم معين أو استشارة، إحنا جاهزين!",
       "في الآخر هتلاقي زر واتساب لو حابب تتواصل معانا ✉️"
     ];
-
     let currentSpeech = 0;
 
     function updateMessage() {
@@ -240,7 +237,6 @@
       currentSpeech = (currentSpeech + 1) % robotSpeeches.length;
     }
 
-    // تحميل أنيميشن الروبوت
     bodymovin.loadAnimation({
       container: robot,
       renderer: 'svg',
@@ -251,6 +247,5 @@
 
     setInterval(updateMessage, 9000);
   </script>
-
 </body>
 </html>

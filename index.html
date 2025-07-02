@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>المهندس للتشطيبات</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
@@ -14,7 +14,7 @@
       overflow-x: hidden;
     }
     header {
-      background-image: url('https://sherif1naeem.github.io/IMG-20250620-WA0128.jpg');
+      background-image: url('https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0128.jpg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -98,8 +98,12 @@
       z-index: 2;
       transform: translateY(-50%);
     }
-    .prev { right: 10px; }
-    .next { left: 10px; }
+    .prev {
+      right: 10px;
+    }
+    .next {
+      left: 10px;
+    }
     .prev:hover, .next:hover {
       background-color: #ff9900;
     }
@@ -161,6 +165,30 @@
       <li>أرضيات سيراميك وبورسلين</li>
       <li>أعمال جبس بورد وديكورات</li>
     </ul>
+    <h2>معرض أعمالنا</h2>
+    <div class="slideshow-container">
+      <!-- الصور -->
+      <!-- هضيف هنا الصور من GitHub -->
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0177.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0165.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0157.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0136.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0134.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0112.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0123.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0092.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0073.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250621-WA0023.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0347.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0335.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0331.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0286.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0284.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0280.jpg"></div>
+      <div class="slides"><img src="https://raw.githubusercontent.com/sherif1naeem/sherif1naeem.github.io/main/IMG-20250620-WA0269.jpg"></div>
+      <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1)">&#10095;</span>
+    </div>
     <h2>ليه تختارنا؟</h2>
     <p>✅ لأننا بنشتغل بإيدينا وبنتابع كل شغل خطوة بخطوة، يعني مفيش مقاولين بيمرروا الشغل لناس تانية.<br>
     ✅ لأن أسعارنا مناسبة، وشغلنا على المفتاح من غير صداع ولا مفاجآت.<br>
@@ -179,20 +207,35 @@
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
   </footer>
   <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("slides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+    setInterval(() => plusSlides(1), 5000);
     const robot = document.getElementById('robot');
     const message = document.getElementById('robot-message');
     const robotSpeeches = [
       "أهلاً بيك في المهندس للتشطيبات! 👷‍♂️",
       "إحنا هنا علشان نخلي بيتك أو محلك بشكل يليق بيك!",
+      "شوف شغلنا في المعرض تحت وقرر بنفسك 😉",
       "لو محتاج تصميم معين أو استشارة، إحنا جاهزين!",
-      "اضغط على واتساب وتواصل معانا مباشرة!"
+      "في الآخر هتلاقي زر واتساب لو حابب تتواصل معانا ✉️"
     ];
     let currentSpeech = 0;
     function updateMessage() {
       message.innerText = robotSpeeches[currentSpeech];
       currentSpeech = (currentSpeech + 1) % robotSpeeches.length;
     }
-    setInterval(updateMessage, 9000);
     bodymovin.loadAnimation({
       container: robot,
       renderer: 'svg',
@@ -200,6 +243,7 @@
       autoplay: true,
       path: 'https://assets2.lottiefiles.com/packages/lf20_vybwn7df.json'
     });
+    setInterval(updateMessage, 9000);
   </script>
 </body>
-</html>
+                                                                                                                                          </html>

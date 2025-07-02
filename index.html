@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>المهندس للتشطيبات</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -17,7 +18,7 @@
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       position: relative;
     }
@@ -97,9 +98,15 @@
       z-index: 2;
       transform: translateY(-50%);
     }
-    .prev { right: 10px; }
-    .next { left: 10px; }
-    .prev:hover, .next:hover { background-color: #ff9900; }
+    .prev {
+      right: 10px;
+    }
+    .next {
+      left: 10px;
+    }
+    .prev:hover, .next:hover {
+      background-color: #ff9900;
+    }
     .whatsapp {
       display: inline-block;
       background-color: #25D366;
@@ -110,6 +117,28 @@
       font-weight: bold;
       margin-top: 15px;
     }
+    #robot {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 90px;
+      height: 90px;
+      z-index: 999;
+      cursor: pointer;
+    }
+    #robot-message {
+      position: fixed;
+      bottom: 110px;
+      left: 10px;
+      background: white;
+      color: #003366;
+      padding: 10px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 998;
+      font-weight: bold;
+      max-width: 220px;
+    }
     footer {
       text-align: center;
       font-size: 14px;
@@ -117,70 +146,6 @@
       background-color: #003366;
       color: white;
       margin-top: 40px;
-    }
-    #chatbot-icon {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      font-size: 40px;
-      cursor: pointer;
-      z-index: 999;
-    }
-    #chatbot-box {
-      position: fixed;
-      bottom: 80px;
-      left: 20px;
-      width: 280px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      font-family: 'Cairo', sans-serif;
-      z-index: 998;
-      overflow: hidden;
-    }
-    .hidden { display: none; }
-    #chatbot-header {
-      background-color: #003366;
-      color: white;
-      padding: 10px;
-      font-weight: bold;
-      text-align: center;
-    }
-    #chatbot-messages {
-      max-height: 200px;
-      overflow-y: auto;
-      padding: 10px;
-    }
-    .msg {
-      padding: 6px 10px;
-      border-radius: 8px;
-      margin: 5px 0;
-      max-width: 90%;
-    }
-    .msg.bot {
-      background: #eee;
-    }
-    .msg.user {
-      background: #ff9900;
-      color: white;
-      text-align: right;
-    }
-    #chatbot-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 10px;
-      justify-content: center;
-    }
-    #chatbot-buttons button {
-      flex: 1;
-      background: #003366;
-      color: white;
-      border: none;
-      padding: 8px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
     }
   </style>
 </head>
@@ -202,7 +167,29 @@
     </ul>
     <h2>معرض أعمالنا</h2>
     <div class="slideshow-container">
-      <!-- سيتم إدراج جميع الصور هنا لاحقًا -->
+      <!-- الصور -->
+      <div class="slides"><img src="https://i.postimg.cc/877SNWZ0/IMG-20250620-WA0296.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/67RxGKJV/IMG-20250620-WA0298.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/6yjXkzfZ/IMG-20250620-WA0301.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/Xp7W1td3/IMG-20250620-WA0305.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/XXW4drvr/IMG-20250620-WA0322.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/Cn7vfPxs/IMG-20250620-WA0332.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/683PCXR2/IMG-20250620-WA0335.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/tZ0m0ncW/IMG-20250620-WA0336.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/MvzNKRpY/IMG-20250621-WA0012.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/21KKwKFH/IMG-20250621-WA0088.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/5QSrS9nv/IMG-20250621-WA0090.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/ftXpkfd8/IMG-20250621-WA0095.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/xcYDJhtM/IMG-20250621-WA0136.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/HJFFphrJ/IMG-20250621-WA0140.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/p5fwcJXm/IMG-20250621-WA0165.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/bsTXQgBM/IMG-20250621-WA0166.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/sB1RfWKL/IMG-20250621-WA0175.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/KKVh1YH8/IMG-20250621-WA0176.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/nX3Jt2K7/IMG-20250621-WA0177.jpg"></div>
+      <div class="slides"><img src="https://i.postimg.cc/47DGS36S/work1.jpg"></div>
+      <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+      <span class="next" onclick="plusSlides(1)">&#10095;</span>
     </div>
     <h2>ليه تختارنا؟</h2>
     <p>✅ لأننا بنشتغل بإيدينا وبنتابع كل شغل خطوة بخطوة، يعني مفيش مقاولين بيمرروا الشغل لناس تانية.<br>
@@ -216,23 +203,14 @@
       <a class="whatsapp" href="https://wa.me/201061751523" target="_blank">راسلنا على واتساب</a>
     </div>
   </section>
-  <div id="chatbot-icon" onclick="toggleChatbot()">🤖</div>
-  <div id="chatbot-box" class="hidden">
-    <div id="chatbot-header">الروبوت المساعد</div>
-    <div id="chatbot-messages">
-      <div class="msg bot">أهلاً بيك! 👋 إزاي نقدر نساعدك؟</div>
-    </div>
-    <div id="chatbot-buttons">
-      <button onclick="sendReply('ايه خدماتكم؟')">ايه خدماتكم؟</button>
-      <button onclick="sendReply('ممكن اشوف الشغل؟')">ممكن اشوف الشغل؟</button>
-      <button onclick="sendReply('عايز اتواصل')">عايز اتواصل</button>
-    </div>
-  </div>
+  <div id="robot-message">أهلاً بيك في المهندس للتشطيبات! 👷‍♂️</div>
+  <div id="robot"></div>
   <footer>
     &copy; 2025 المهندس للتشطيبات. جميع الحقوق محفوظة.
   </footer>
   <script>
     let slideIndex = 1;
+    showSlides(slideIndex);
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
@@ -246,27 +224,28 @@
       slides[slideIndex-1].style.display = "block";
     }
     setInterval(() => plusSlides(1), 5000);
-    document.addEventListener("DOMContentLoaded", () => showSlides(slideIndex));function toggleChatbot() {
-  const box = document.getElementById("chatbot-box");
-  box.classList.toggle("hidden");
-}
-function sendReply(text) {
-  const messages = document.getElementById("chatbot-messages");
-  messages.innerHTML += `<div class="msg user">${text}</div>`;
-  let reply = '';
-  if (text === 'ايه خدماتكم؟') {
-    reply = "بنقدّم تشطيبات كاملة، دهانات، كهرباء وسباكة، جبس بورد، وسيراميك.";
-  } else if (text === 'ممكن اشوف الشغل؟') {
-    reply = "أكيد! انزل شوية في الصفحة وهتلاقي معرض أعمالنا ✅";
-  } else if (text === 'عايز اتواصل') {
-    reply = "اتفضل: <a href='https://wa.me/201061751523' target='_blank'>راسلنا على واتساب</a>";
-  } else {
-    reply = "معلش، مفهمتش قصدك 😅";
-  }
-  messages.innerHTML += `<div class="msg bot">${reply}</div>`;
-  messages.scrollTop = messages.scrollHeight;
-}
-
+    const robot = document.getElementById('robot');
+    const message = document.getElementById('robot-message');
+    const robotSpeeches = [
+      "أهلاً بيك في المهندس للتشطيبات! 👷‍♂️",
+      "إحنا هنا علشان نخلي بيتك أو محلك بشكل يليق بيك!",
+      "شوف شغلنا في المعرض تحت وقرر بنفسك 😉",
+      "لو محتاج تصميم معين أو استشارة، إحنا جاهزين!",
+      "في الآخر هتلاقي زر واتساب لو حابب تتواصل معانا ✉️"
+    ];
+    let currentSpeech = 0;
+    function updateMessage() {
+      message.innerText = robotSpeeches[currentSpeech];
+      currentSpeech = (currentSpeech + 1) % robotSpeeches.length;
+    }
+    bodymovin.loadAnimation({
+      container: robot,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets2.lottiefiles.com/packages/lf20_vybwn7df.json'
+    });
+    setInterval(updateMessage, 9000);
   </script>
 </body>
 </html>

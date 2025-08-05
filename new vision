@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نيو ڤيجن للدعاية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #222;
+    }header {
+  background-color: #0d2235;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+nav a {
+  color: #0d2235;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+.hero {
+  background: linear-gradient(to left, #ff6600, #ff9966);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #0d2235;
+}
+
+.footer {
+  background-color: #0d2235;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>نيو ڤيجن للدعاية</h1>
+    <p>أفكار مبتكرة - نتائج ملموسة</p>
+  </header>  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#services">الخدمات</a>
+    <a href="#portfolio">أعمالنا</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>  <section class="hero">
+    <h1>نحن نحول أفكارك إلى حقيقة</h1>
+    <p>نقدّم خدمات دعاية وتسويق بذكاء وابتكار</p>
+  </section>  <section class="section" id="about">
+    <h2>من نحن</h2>
+    <p>نحن شركة دعاية وتسويق رقمية، نقدم حلولًا إبداعية وعملية تساعدك في الوصول لجمهورك وتحقيق أهدافك.</p>
+  </section>  <section class="section" id="services">
+    <h2>خدماتنا</h2>
+    <p>إعلانات ممولة - تصميم جرافيك - تسويق رقمي - تنظيم فعاليات - إنشاء هوية بصرية</p>
+  </section>  <section class="section" id="portfolio">
+    <h2>أعمالنا</h2>
+    <p>تابع قريبًا نماذج من مشاريعنا الناجحة.</p>
+  </section>  <section class="section" id="contact">
+    <h2>تواصل معنا</h2>
+    <p>رقم الهاتف: 0106 945 4595<br>الإيميل: info@newvision.com</p>
+  </section>  <footer class="footer">
+    <p>&copy; 2025 نيو ڤيجن - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
